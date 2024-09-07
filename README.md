@@ -25,7 +25,7 @@ The backend for this project is deployed on Railway. You can access the live API
 </ul>
 
 <h3>Setup Instructions:</h3>
-<h4>1. Clone the repository</h4>
+<h4>1. Clone the repository:</h4>
 
 git clone https://github.com/Sameeer-Ahmad/Wisdom-Peak-Analytics.git
 
@@ -35,7 +35,7 @@ cd backend
 <h4>3. Install dependencies:</h4>
 npm install
 
-<h5>Database Connection:</h5>
+<h5>4. Database Connection:</h5>
 The API connects to the database using Sequelize. The configuration is located in config/db.js. 
 
 <br>
