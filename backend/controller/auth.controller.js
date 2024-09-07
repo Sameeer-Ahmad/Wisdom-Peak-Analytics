@@ -41,7 +41,7 @@ const signup = async (req, res) => {
     res.status(400).send({ msg: "Unable to signup", error: error.message });
   }
 };
-
+                                      
 // Authenticates user and generates JWT on successful login.
 const login = async (req, res) => {
   const { email, password } = req.body;

@@ -1,26 +1,34 @@
 const jwt = require("jsonwebtoken");
-const { userModel } = require("../model/user.model");
+const { UserModel } = require("../model/user.model");
 require("dotenv").config();
-const auth = (req, res, next) => {
-  const token = req.headers.authorization?.split(" ")[1];
-  console.log(token);
-  if (token) {
-    jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
-      if (decoded) {
-        const { userID, username, role } = decoded;
-        const user = await userModel.findById(userID);
-        req.user = user;
-        req.body.userID = userID;
-        next();
-      } else {
-        console.log(err);
-        res.status(400).send("Invalid token");
-      }
-    });
-  } else {
-    res.status(401).send("Token not provided");
+
+const authMiddleware = async (req, res, next) => {
+  try {
+    const authHeader = req.headers.authorization;
+    
+    if (!authHeader) {
+      return res.status(401).json({ message: "Authorization header missing" });
+    }
+
+    const token = authHeader.split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ message: "Token missing from authorization header" });
+    }
+
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+
+    const userId = decoded.userId;
+    const user = await UserModel.findByPk(userId);
+    if (!user) {
+      return res.status(401).json({ message: "User not found" });
+    }
+    
+    req.user = user;
+    next();
+  } catch (error) {
+    console.error(error);
+    return res.status(401).json({ message: "Invalid token" });
   }
 };
-module.exports = {
-  auth,
-};
+
+module.exports = authMiddleware;

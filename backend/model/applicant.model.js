@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/db');
-const Job = require('./Job'); // Assuming the Job model is in the same directory
+const Job = require('./job.model');
 
 const Applicant = sequelize.define('Applicant', {
   applicant_id: {
@@ -16,7 +16,7 @@ const Applicant = sequelize.define('Applicant', {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      isEmail: true,  // Validate email format
+      isEmail: true,  
     }
   },
   resume_link: {
