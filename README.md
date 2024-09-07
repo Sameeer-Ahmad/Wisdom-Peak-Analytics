@@ -2,12 +2,11 @@
 <h2>Job Application Management System API</h2>
 <div>This is a RESTful API built to manage a job application system for a company. It allows management of job positions, applicants' details (such as name, email, resume link, and status), and interview dates. The API is built using Node.js with Express and connected to a MySQL database.</div>
 
-<h3>Deployment:</h3> 
+## Deployment:
 The backend for this project is deployed on Railway. You can access the live API at:
-**[API Endpoint](https://wisdom-peak-analytics-production.up.railway.app/)**
+https://wisdom-peak-analytics-production.up.railway.app/
 
-
-<h3>Features:</h3>
+## Features:
 <ul>
   <li>Authentication: Secure API endpoints using JWT (JSON Web Tokens) for user authentication.</li>
   <li>Jobs Management: Create and retrieve job positions.</li>
@@ -16,7 +15,7 @@ The backend for this project is deployed on Railway. You can access the live API
   <li>Validation: Input validation for email format, required fields, and valid job IDs.</li>
 </ul>
 
-<h3>Requirements:</h3>
+## Requirements:
 <ul>
   <li>Node.js</li>
   <li>Express.js</li>
@@ -24,7 +23,7 @@ The backend for this project is deployed on Railway. You can access the live API
   <li>JWT for authentication</li>
 </ul>
 
-<h3>Setup Instructions:</h3>
+## Setup Instructions:
 <h4>1. Clone the repository:</h4>
 
 git clone https://github.com/Sameeer-Ahmad/Wisdom-Peak-Analytics.git
@@ -35,12 +34,10 @@ cd backend
 <h4>3. Install dependencies:</h4>
 npm install
 
-<h5>4. Database Connection:</h5>
+## Database Connection:
 The API connects to the database using Sequelize. The configuration is located in config/db.js. 
 
-<br>
-<br>
-<h3>Database Schema:</h3>
+## Database Schema:
 
 <h3>User Table</h3>
 <table>
@@ -202,8 +199,8 @@ The API connects to the database using Sequelize. The configuration is located i
             </tr>
         </tbody>
     </table>
-    
-<h3>API Endpoints:</h3>
+
+## API Endpoints:
 
 <h3>1.POST /users/signup</h3>
 singup the user
@@ -276,7 +273,12 @@ Fetch interview details for a specific applicant.
 
 
 
+## Postman Collection
 
+You can easily import and test the API endpoints using the Postman collection provided below.
+<br>
+<br>
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/34319927-5671d02f-7cc8-4eee-aadf-83e31e1f4d59?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D34319927-5671d02f-7cc8-4eee-aadf-83e31e1f4d59%26entityType%3Dcollection%26workspaceId%3D968dce44-77e8-4518-a83b-bec0c092fa2f)
 
 
 
