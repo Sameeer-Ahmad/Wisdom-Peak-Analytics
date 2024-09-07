@@ -29,10 +29,10 @@ The backend for this project is deployed on Railway. You can access the live API
 
 git clone https://github.com/Sameeer-Ahmad/Wisdom-Peak-Analytics.git
 
-<h4>Navigate to the project directory:</h4>
+<h4>2. Navigate to the project directory:</h4>
 cd backend
 
-<h4>2. Install dependencies:</h4>
+<h4>3. Install dependencies:</h4>
 npm install
 
 <h5>Database Connection:</h5>
